@@ -12,7 +12,7 @@ export const useEvents = () => {
   const [error, setError] = useState<string | null>(null)
   const [categories, setCategories] = useState<Category[]>([])
 
-  // Fetch all events on component mount
+
   useEffect(() => {
     const getEvents = async () => {
       try {
@@ -23,18 +23,17 @@ export const useEvents = () => {
           throw new Error("No events data received")
         }
 
-        // Log the response to see the actual data structure
         console.log("Strapi Response:", response)
 
         setEvents(response.data)
         setFilteredEvents(response.data)
         
-        // Extract unique categories from events
+
         const uniqueCategories = Array.from(
           new Set(
             response.data
               .map(event => {
-                // Log each event to see its structure
+       
                 console.log("Event:", event)
                 return event.Category
               })
@@ -48,7 +47,6 @@ export const useEvents = () => {
         
         console.log("Extracted categories:", uniqueCategories)
         
-        // Add "All" category at the beginning
         setCategories([
           { id: "all", name: "All", slug: "all" },
           ...uniqueCategories
@@ -65,7 +63,7 @@ export const useEvents = () => {
     getEvents()
   }, [])
 
-  // Filter events when activeFilter changes
+  
   useEffect(() => {
     if (activeFilter === "all") {
       setFilteredEvents(events)
@@ -81,7 +79,6 @@ export const useEvents = () => {
     }
   }, [activeFilter, events])
 
-  // Function to change the active filter
   const handleFilterChange = (filter: string) => {
     setActiveFilter(filter)
   }
