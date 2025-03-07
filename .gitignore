@@ -1,0 +1,69 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Next.js
+.next/
+out/
+
+# Strapi
+.strapi/
+build/
+.cache/
+public/uploads/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# IDE/Editor
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Dependency directories
+**/node_modules/
+
+# Build files
+dist/
+*.build
+
+# Local development files
+*.local
+
+# Strapi database files (if using SQLite)
+*.sqlite
+*.sqlite-journal
+
+# Strapi plugins (if using local plugins)
+plugins/
+
+# Strapi customizations (if using custom configurations)
+config/functions/
+config/middleware.js
+config/plugins.js
+config/database.js
+config/server.js
+
+# Strapi API keys and secrets
+config/api-keys.json
+config/secrets.json
+
+# Strapi admin panel customizations
+admin/
+
+# Strapi generated files
+extensions/
+components/
